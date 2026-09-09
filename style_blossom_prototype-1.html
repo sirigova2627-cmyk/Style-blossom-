@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style Blossom | Ladies Fashion Boutique</title>
+<style>
+:root{
+  --rose:#b45b6f; --blush:#f7e4e2; --cream:#fffaf7;
+  --gold:#b98a45; --dark:#292326; --muted:#74686a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,serif;color:var(--dark);background:var(--cream)}
+a{text-decoration:none;color:inherit}
+.top{background:var(--rose);color:#fff;padding:8px 5%;font:13px Arial;text-align:center}
+nav{height:82px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 6%;border-bottom:1px solid #eee;position:sticky;top:0;z-index:5}
+.logo{font-size:26px;letter-spacing:2px}.logo b{color:var(--rose)}
+nav ul{display:flex;gap:30px;list-style:none;font:15px Arial}
+.icons{display:flex;gap:16px;font-size:20px}
+.hero{min-height:430px;background:linear-gradient(90deg,#f9e5e3 0%,#fbeeea 55%,#ead4ca 100%);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:45px 8%;overflow:hidden}
+.hero h1{font-size:64px;font-weight:400;font-style:italic;margin-bottom:10px}
+.hero h2{font:17px Arial;letter-spacing:5px;color:var(--rose);margin-bottom:20px}
+.hero p{color:var(--muted);font-size:18px;margin-bottom:25px}
+.btn{display:inline-block;background:var(--rose);color:#fff;padding:13px 27px;border-radius:24px;font:14px Arial}
+.hero-art{height:350px;border-radius:45% 45% 0 0;background:linear-gradient(#d9a9a0,#b8737f);position:relative;max-width:420px;margin:auto}
+.hero-art:before{content:"";position:absolute;left:24%;top:8%;width:52%;height:84%;border-radius:50% 50% 35% 35%;background:linear-gradient(135deg,#f5d9d4,#a85668)}
+.hero-art:after{content:"NEW ARRIVALS";position:absolute;right:-35px;bottom:35px;background:#fff;padding:18px;letter-spacing:3px;font:13px Arial;box-shadow:0 8px 25px #0001}
+.categories{padding:35px 7%;display:flex;justify-content:center;gap:30px;flex-wrap:wrap;background:#fff}
+.cat{width:110px;text-align:center}.cat-circle{width:72px;height:72px;margin:auto auto 10px;border-radius:50%;background:var(--blush);display:grid;place-items:center;font-size:30px}.cat span{font-size:14px}
+.section{padding:50px 7%}.section h2{text-align:center;font-size:32px;font-weight:400}.section .sub{text-align:center;color:var(--muted);margin:8px 0 28px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:#fff;border:1px solid #eee;border-radius:8px;overflow:hidden;position:relative}
+.pic{height:245px;background:linear-gradient(145deg,#ead7ce,#c9979b);display:grid;place-items:center;color:#fff;font-size:42px}
+.card:nth-child(2) .pic{background:linear-gradient(145deg,#d9e1dc,#6f8179)}
+.card:nth-child(3) .pic{background:linear-gradient(145deg,#e8c2c8,#ad6275)}
+.card:nth-child(4) .pic{background:linear-gradient(145deg,#d9eadf,#9bb6a8)}
+.card-info{padding:15px}.card-info h3{font-size:17px;font-weight:400}.price{color:var(--rose);font:bold 17px Arial;margin-top:8px}.old{text-decoration:line-through;color:#aaa;font:12px Arial;margin-left:6px}
+.cart{position:absolute;right:12px;bottom:12px;width:34px;height:34px;border:0;border-radius:50%;background:var(--rose);color:#fff}
+.banner{margin:10px 7% 50px;padding:28px;text-align:center;background:var(--blush);border:1px solid #efd2d0}.banner strong{color:var(--rose)}
+.features{display:flex;justify-content:space-around;gap:20px;background:#f7e8e5;padding:25px 7%;font:14px Arial;text-align:center}.features b{display:block;margin-bottom:5px}
+footer{background:#292326;color:#fff;padding:40px 7%;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:30px;font:13px Arial}footer h3{font:17px Georgia;margin-bottom:14px}footer p,footer li{color:#d7ced0;line-height:1.8;list-style:none}
+.modal{display:none;position:fixed;inset:0;background:#0008;z-index:20;place-items:center}.modal-box{background:#fff;padding:30px;border-radius:12px;width:min(420px,90%);text-align:center}.close{float:right;border:0;background:none;font-size:22px}
+@media(max-width:850px){nav ul{display:none}.hero{grid-template-columns:1fr;text-align:center}.hero-art{width:75%;margin-top:30px}.products{grid-template-columns:repeat(2,1fr)}footer{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.hero h1{font-size:45px}.products{grid-template-columns:1fr}.features{flex-direction:column}footer{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top">🚚 Free Shipping on orders above ₹999 &nbsp; | &nbsp; ✨ 10% OFF on your first order — WELCOME10</div>
+<nav>
+  <div class="logo"><b>SB</b> STYLE BLOSSOM</div>
+  <ul><li><a href="#home">Home</a></li><li><a href="#shop">Shop</a></li><li><a href="#new">New Arrivals</a></li><li><a href="#about">About Us</a></li><li><a href="#contact">Contact</a></li></ul>
+  <div class="icons">⌕ ♡ 🛍️</div>
+</nav>
+
+<section class="hero" id="home">
+  <div><h1>Style Blossom</h1><h2>LADIES FASHION BOUTIQUE</h2><p>Trendy • Elegant • You</p><a class="btn" href="#shop">Shop Now →</a></div>
+  <div class="hero-art"></div>
+</section>
+
+<div class="categories">
+  <a class="cat" href="#shop"><div class="cat-circle">👗</div><span>Kurtis</span></a>
+  <a class="cat" href="#shop"><div class="cat-circle">👗</div><span>Dresses</span></a>
+  <a class="cat" href="#shop"><div class="cat-circle">🥻</div><span>Sarees</span></a>
+  <a class="cat" href="#shop"><div class="cat-circle">👖</div><span>Palazzos</span></a>
+  <a class="cat" href="#shop"><div class="cat-circle">👜</div><span>Accessories</span></a>
+</div>
+
+<section class="section" id="shop">
+  <h2>Featured Collection</h2><p class="sub">Handpicked styles just for you</p>
+  <div class="products">
+    <article class="card"><div class="pic">🌸</div><div class="card-info"><h3>Floral Cotton Kurti</h3><div class="price">₹799 <span class="old">₹999</span></div></div><button class="cart" onclick="add('Floral Cotton Kurti')">+</button></article>
+    <article class="card"><div class="pic">✨</div><div class="card-info"><h3>Tiered Dress</h3><div class="price">₹1,299 <span class="old">₹1,599</span></div></div><button class="cart" onclick="add('Tiered Dress')">+</button></article>
+    <article class="card"><div class="pic">🥻</div><div class="card-info"><h3>Silk Blend Saree</h3><div class="price">₹1,899 <span class="old">₹2,499</span></div></div><button class="cart" onclick="add('Silk Blend Saree')">+</button></article>
+    <article class="card"><div class="pic">🌿</div><div class="card-info"><h3>Palazzo Set</h3><div class="price">₹1,399 <span class="old">₹1,799</span></div></div><button class="cart" onclick="add('Palazzo Set')">+</button></article>
+  </div>
+</section>
+
+<div class="banner" id="new"><strong>NEW ARRIVALS</strong><br>Fresh styles for every mood — <b>Shop the latest collection →</b></div>
+
+<div class="features"><div><b>🚚 Free Shipping</b>On orders above ₹999</div><div><b>🛡️ Secure Payments</b>100% Safe & Trusted</div><div><b>↩️ Easy Returns</b>Hassle Free</div></div>
+
+<footer id="contact">
+  <div><h3>STYLE BLOSSOM</h3><p>Ladies Fashion Boutique<br>Wear Your Vibe ♡</p></div>
+  <div><h3>Quick Links</h3><p>Home<br>Shop<br>New Arrivals<br>About Us<br>Contact</p></div>
+  <div><h3>Categories</h3><p>Kurtis<br>Dresses<br>Sarees<br>Palazzos<br>Accessories</p></div>
+  <div><h3>Customer Care</h3><p>Shipping Policy<br>Returns & Refund<br>Terms & Conditions<br>Privacy Policy<br>WhatsApp: +91 XXXXX XXXXX</p></div>
+</footer>
+
+<div class="modal" id="modal"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><h2>Added to Cart ♡</h2><p id="msg"></p><br><a class="btn" href="#contact" onclick="closeModal()">Continue Shopping</a></div></div>
+<script>
+function add(name){document.getElementById('msg').textContent=name+' has been added to your prototype cart.';document.getElementById('modal').style.display='grid'}
+function closeModal(){document.getElementById('modal').style.display='none'}
+</script>
+</body>
+</html>
