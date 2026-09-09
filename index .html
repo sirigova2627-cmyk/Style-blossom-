@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Style Blossom - Ladies Fashion Boutique">
+<title>Style Blossom | Ladies Fashion Boutique</title>
+<style>
+:root{
+  --rose:#b65f72;--rose-dark:#8f4053;--blush:#f8e8e5;--cream:#fffaf7;
+  --gold:#b88945;--ink:#292326;--muted:#756b6d;--white:#fff;
+  --border:#eadfdb;--shadow:0 12px 35px rgba(49,32,35,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,"Times New Roman",serif;background:var(--cream);color:var(--ink);line-height:1.5}
+button,input,select{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+.hidden{display:none!important}
+
+/* Announcement + Header */
+.announcement{background:var(--rose);color:#fff;text-align:center;padding:8px 16px;font:13px Arial,sans-serif}
+.header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+.nav{max-width:1250px;margin:auto;height:82px;padding:0 24px;display:flex;align-items:center;gap:30px}
+.logo{display:flex;align-items:center;gap:10px;min-width:245px}
+.logo-mark{font-size:32px;font-weight:700;color:var(--rose);letter-spacing:-5px}
+.logo-text{font-size:21px;letter-spacing:2px}
+.logo-text small{display:block;font:9px Arial,sans-serif;letter-spacing:3px;color:var(--muted);margin-top:2px}
+.nav-links{display:flex;gap:25px;list-style:none;margin-left:auto}
+.nav-links button{border:0;background:none;color:var(--ink);font:14px Arial,sans-serif;padding:8px 2px}
+.nav-links button:hover,.nav-links button.active{color:var(--rose)}
+.nav-actions{display:flex;gap:12px;margin-left:8px}
+.icon-btn{width:38px;height:38px;border:0;background:transparent;border-radius:50%;font-size:20px;position:relative}
+.icon-btn:hover{background:var(--blush)}
+.badge{position:absolute;right:-2px;top:-1px;background:var(--rose);color:#fff;border-radius:20px;min-width:17px;height:17px;padding:0 4px;font:10px Arial;display:grid;place-items:center}
+.mobile-menu{display:none}
+
+/* Views */
+.view{min-height:calc(100vh - 115px)}
+.page{max-width:1250px;margin:auto;padding:55px 24px}
+.page-title{text-align:center;font-size:38px;font-weight:400}
+.page-sub{text-align:center;color:var(--muted);margin:8px 0 32px}
+
+/* Home */
+.hero{background:linear-gradient(100deg,#f9e4e1,#fbeeea 53%,#ead5ca);min-height:470px;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:55px max(6%,calc((100% - 1250px)/2));overflow:hidden}
+.hero-copy{padding:15px}
+.script{font-style:italic;font-size:68px;font-weight:400;line-height:1.05}
+.hero h2{font:15px Arial,sans-serif;letter-spacing:5px;color:var(--rose);margin:15px 0}
+.hero p{font-size:18px;color:var(--muted);margin-bottom:25px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:25px;padding:12px 25px;background:var(--rose);color:#fff;font:14px Arial,sans-serif;transition:.2s}
+.btn:hover{background:var(--rose-dark);transform:translateY(-1px)}
+.btn.outline{background:#fff;color:var(--rose);border:1px solid var(--rose)}
+.hero-art{height:385px;max-width:470px;margin:auto;width:100%;border-radius:47% 47% 0 0;background:linear-gradient(145deg,#d8aaa1,#b76d78);position:relative;box-shadow:var(--shadow)}
+.hero-art:before{content:"";position:absolute;width:48%;height:82%;left:26%;top:7%;border-radius:50% 50% 35% 35%;background:linear-gradient(150deg,#f3d5d0,#9e5265);transform:rotate(2deg)}
+.hero-card{position:absolute;right:-25px;bottom:35px;background:#fff;padding:18px 23px;box-shadow:var(--shadow);font-size:15px}
+.hero-card strong{display:block;font-size:24px;font-weight:400}.hero-card span{color:var(--rose);font:12px Arial;letter-spacing:2px}
+
+/* Categories */
+.categories{background:#fff;display:flex;justify-content:center;gap:28px;flex-wrap:wrap;padding:32px 20px}
+.category{width:105px;text-align:center;border:0;background:none}
+.category .circle{width:70px;height:70px;margin:0 auto 9px;background:var(--blush);border-radius:50%;display:grid;place-items:center;font-size:30px;transition:.2s}
+.category:hover .circle{transform:translateY(-4px);box-shadow:0 8px 20px #b65f7220}
+.category span{font-size:14px}
+
+/* Products */
+.toolbar{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap}
+.search{display:flex;background:#fff;border:1px solid var(--border);border-radius:25px;overflow:hidden;max-width:390px;flex:1}
+.search input{border:0;outline:0;padding:11px 16px;width:100%;background:transparent;font:14px Arial}
+.search button{border:0;background:none;padding:0 15px}
+select{border:1px solid var(--border);background:#fff;border-radius:22px;padding:10px 15px;outline:0;font:13px Arial}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.product{background:#fff;border:1px solid var(--border);border-radius:9px;overflow:hidden;position:relative;transition:.2s}
+.product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.product-img{height:270px;display:grid;place-items:center;font-size:65px;position:relative}
+.product-img.kurti{background:linear-gradient(145deg,#ead8cd,#c79799)}
+.product-img.dress{background:linear-gradient(145deg,#dbe5e0,#70847a)}
+.product-img.saree{background:linear-gradient(145deg,#ecc5cb,#ac6175)}
+.product-img.palazzo{background:linear-gradient(145deg,#d9e9df,#9ab7a9)}
+.product-img.legging{background:linear-gradient(145deg,#e3d6e6,#987ca0)}
+.product-img.dupatta{background:linear-gradient(145deg,#f0e0bf,#c89f5d)}
+.product-img.accessory{background:linear-gradient(145deg,#f2d7df,#b86a82)}
+.wish{position:absolute;right:12px;top:12px;border:0;background:#fff;border-radius:50%;width:34px;height:34px;font-size:17px}
+.wish.liked{color:var(--rose)}
+.product-info{padding:15px}
+.product-info h3{font-size:17px;font-weight:400}
+.rating{font:12px Arial;color:#b87922;margin-top:5px}
+.price{font:bold 17px Arial;color:var(--rose);margin-top:7px}
+.old{font:12px Arial;color:#aaa;text-decoration:line-through;margin-left:6px}
+.product-actions{display:flex;gap:8px;margin-top:12px}
+.small-btn{flex:1;border:1px solid var(--rose);background:#fff;color:var(--rose);border-radius:20px;padding:8px;font:12px Arial}
+.small-btn.primary{background:var(--rose);color:#fff}
+
+/* Product detail */
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}
+.detail-image{height:520px;border-radius:10px;display:grid;place-items:center;font-size:120px}
+.detail-info h1{font-size:42px;font-weight:400;line-height:1.1}
+.detail-rating{margin:12px 0;color:#b87922;font:13px Arial}
+.detail-price{font:bold 25px Arial;color:var(--rose)}
+.detail-old{text-decoration:line-through;color:#999;font:14px Arial;margin-left:8px}
+.detail-info p{color:var(--muted);margin:20px 0}
+.option-label{font:bold 13px Arial;margin:18px 0 8px}
+.options{display:flex;gap:8px;flex-wrap:wrap}
+.option{padding:9px 14px;background:#fff;border:1px solid var(--border);border-radius:20px;font:13px Arial}
+.option.selected{border-color:var(--rose);color:var(--rose);background:var(--blush)}
+.qty{display:flex;align-items:center;width:max-content;border:1px solid var(--border);border-radius:22px;overflow:hidden;margin:15px 0}
+.qty button{width:35px;height:35px;border:0;background:#fff}.qty span{width:35px;text-align:center;font:14px Arial}
+
+/* Cart */
+.cart-layout{display:grid;grid-template-columns:1.7fr 1fr;gap:30px}
+.cart-list,.summary,.checkout-box,.info-card{background:#fff;border:1px solid var(--border);border-radius:10px}
+.cart-item{display:grid;grid-template-columns:95px 1fr auto;gap:15px;align-items:center;padding:18px;border-bottom:1px solid var(--border)}
+.cart-item:last-child{border-bottom:0}
+.cart-thumb{width:95px;height:105px;border-radius:7px;display:grid;place-items:center;font-size:35px}
+.cart-item h3{font-size:16px;font-weight:400}.cart-item p{font:13px Arial;color:var(--muted)}
+.remove{border:0;background:none;color:#a33;font:12px Arial}
+.item-price{font:bold 15px Arial;color:var(--rose)}
+.summary{padding:25px;height:max-content;position:sticky;top:125px}
+.summary h2{font-size:23px;font-weight:400;margin-bottom:20px}
+.row{display:flex;justify-content:space-between;margin:11px 0;font:14px Arial}
+.total{border-top:1px solid var(--border);padding-top:15px;font-weight:bold;font-size:16px}
+
+/* Checkout + forms */
+.checkout{max-width:1000px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:30px}
+.checkout-box{padding:25px}.checkout-box h2{font-weight:400;margin-bottom:18px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{margin-bottom:14px}.field.full{grid-column:1/-1}
+.field label{display:block;font:12px Arial;color:var(--muted);margin-bottom:5px}
+.field input,.field select{width:100%;border:1px solid var(--border);padding:11px 12px;border-radius:6px;outline:0}
+.field input:focus,.field select:focus{border-color:var(--rose)}
+.payment{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}.payment label{border:1px solid var(--border);border-radius:7px;padding:10px 12px;font:13px Arial}.payment input{accent-color:var(--rose)}
+.error{color:#a33;font:12px Arial;margin-top:4px}
+
+/* About/contact */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.about-art{min-height:400px;background:linear-gradient(145deg,#ead3cb,#b66c79);border-radius:10px;display:grid;place-items:center;font-size:100px}
+.info-card{padding:30px}.info-card h2{font-size:30px;font-weight:400;margin-bottom:12px}.info-card p{color:var(--muted);margin-bottom:15px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.contact-box{background:#fff;border:1px solid var(--border);border-radius:10px;padding:28px}
+.contact-box h2{font-size:25px;font-weight:400;margin-bottom:15px}
+
+/* Footer */
+.features{display:flex;justify-content:space-around;gap:20px;flex-wrap:wrap;background:var(--blush);padding:24px;font:13px Arial;text-align:center}
+.features b{display:block;font-family:Georgia;margin-bottom:4px}
+.footer{background:#292326;color:#fff;padding:42px max(6%,calc((100% - 1250px)/2));display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:35px;font:13px Arial}
+.footer h3{font:17px Georgia;margin-bottom:12px}.footer p{color:#d8ced0;line-height:1.9}
+.footer input{width:100%;padding:10px;border:0;border-radius:4px;margin:5px 0 8px}.footer .btn{border-radius:4px}
+
+/* Modal + toast */
+.overlay{position:fixed;inset:0;background:#0008;z-index:100;display:grid;place-items:center;padding:20px}
+.modal{background:#fff;border-radius:12px;padding:28px;width:min(520px,100%);box-shadow:var(--shadow)}
+.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.modal h2{font-weight:400}
+.close{border:0;background:none;font-size:24px}
+.toast{position:fixed;right:20px;bottom:20px;background:#292326;color:#fff;padding:13px 18px;border-radius:7px;font:13px Arial;z-index:200;box-shadow:var(--shadow)}
+.empty{text-align:center;padding:55px 20px;color:var(--muted)}
+.empty .emoji{font-size:50px;margin-bottom:10px}
+
+/* Responsive */
+@media(max-width:1000px){
+  .nav-links{gap:12px}.nav{gap:12px}.logo{min-width:210px}
+  .grid{grid-template-columns:repeat(3,1fr)}.footer{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .nav{height:68px}.logo-text{font-size:17px}.logo-mark{font-size:27px}.nav-links{display:none}.nav-actions{margin-left:auto}
+  .mobile-menu{display:block}.hero{grid-template-columns:1fr;text-align:center;padding:40px 20px}.script{font-size:48px}.hero-art{margin-top:25px;height:300px}
+  .grid{grid-template-columns:repeat(2,1fr)}.detail,.cart-layout,.checkout,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .detail-image{height:350px}.summary{position:static}.page{padding:38px 16px}.page-title{font-size:32px}
+}
+@media(max-width:480px){
+  .announcement{font-size:11px}.grid{grid-template-columns:1fr 1fr;gap:12px}.product-img{height:190px}.product-info{padding:10px}.product-info h3{font-size:14px}
+  .categories{gap:13px}.category{width:80px}.category .circle{width:58px;height:58px}.cart-item{grid-template-columns:65px 1fr auto}.cart-thumb{width:65px;height:75px}
+  .form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer{grid-template-columns:1fr}.hero-card{right:5px}
+}
+</style>
+</head>
+<body>
+
+<div class="announcement">🚚 Free Shipping on orders above ₹999 &nbsp; | &nbsp; ✨ 10% OFF on your first order — WELCOME10</div>
+
+<header class="header">
+<nav class="nav">
+  <button class="icon-btn mobile-menu" onclick="toggleMobile()" aria-label="Menu">☰</button>
+  <button class="logo" onclick="showView('home')" style="border:0;background:none;text-align:left">
+    <span class="logo-mark">SB</span>
+    <span class="logo-text">STYLE BLOSSOM<small>LADIES FASHION BOUTIQUE</small></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><button data-view="home" onclick="showView('home')">Home</button></li>
+    <li><button data-view="shop" onclick="showView('shop')">Shop</button></li>
+    <li><button data-view="new" onclick="showView('new')">New Arrivals</button></li>
+    <li><button data-view="about" onclick="showView('about')">About Us</button></li>
+    <li><button data-view="contact" onclick="showView('contact')">Contact</button></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="icon-btn" onclick="focusSearch()" title="Search">⌕</button>
+    <button class="icon-btn" onclick="showView('wishlist')" title="Wishlist">♡<span class="badge" id="wishCount">0</span></button>
+    <button class="icon-btn" onclick="showView('cart')" title="Cart">🛍<span class="badge" id="cartCount">0</span></button>
+  </div>
+</nav>
+</header>
+
+<main>
+<!-- HOME -->
+<section id="home" class="view">
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="script">Style Blossom</div>
+      <h2>LADIES FASHION BOUTIQUE</h2>
+      <p>Trendy &nbsp;•&nbsp; Elegant &nbsp;•&nbsp; You</p>
+      <button class="btn" onclick="showView('shop')">Shop Now →</button>
+    </div>
+    <div class="hero-art">
+      <div class="hero-card"><strong>New Arrivals</strong><span>FRESH STYLES FOR EVERY MOOD</span></div>
+    </div>
+  </div>
+
+  <div class="categories">
+    <button class="category" onclick="openCategory('Kurtis')"><div class="circle">👗</div><span>Kurtis</span></button>
+    <button class="category" onclick="openCategory('Dresses')"><div class="circle">👗</div><span>Dresses</span></button>
+    <button class="category" onclick="openCategory('Sarees')"><div class="circle">🥻</div><span>Sarees</span></button>
+    <button class="category" onclick="openCategory('Palazzos')"><div class="circle">👖</div><span>Palazzos</span></button>
+    <button class="category" onclick="openCategory('Leggings')"><div class="circle">👖</div><span>Leggings</span></button>
+    <button class="category" onclick="openCategory('Dupattas')"><div class="circle">🧣</div><span>Dupattas</span></button>
+    <button class="category" onclick="openCategory('Accessories')"><div class="circle">💎</div><span>Accessories</span></button>
+  </div>
+
+  <div class="page">
+    <h2 class="page-title">Featured Collection</h2>
+    <p class="page-sub">Handpicked styles just for you</p>
+    <div class="grid" id="homeProducts"></div>
+  </div>
+
+  <div class="features">
+    <div><b>🚚 Free Shipping</b>On orders above ₹999</div>
+    <div><b>🛡️ Secure Payments</b>100% Safe & Trusted</div>
+    <div><b>↩️ Easy Returns</b>Hassle Free</div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop" class="view hidden">
+  <div class="page">
+    <h1 class="page-title">Shop Collection</h1>
+    <p class="page-sub">Find something beautiful for every occasion.</p>
+    <div class="toolbar">
+      <div class="search" id="searchBox"><input id="searchInput" placeholder="Search dresses, sarees, kurtis..." oninput="renderShop()"><button onclick="clearSearch()">×</button></div>
+      <select id="categoryFilter" onchange="renderShop()">
+        <option value="All">All Categories</option><option>Kurtis</option><option>Dresses</option><option>Sarees</option><option>Palazzos</option><option>Leggings</option><option>Dupattas</option><option>Accessories</option>
+      </select>
+      <select id="sortFilter" onchange="renderShop()"><option value="featured">Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option><option value="rating">Top Rated</option></select>
+    </div>
+    <div class="grid" id="shopProducts"></div>
+  </div>
+</section>
+
+<!-- NEW ARRIVALS -->
+<section id="new" class="view hidden">
+  <div class="page">
+    <h1 class="page-title">New Arrivals</h1>
+    <p class="page-sub">Fresh styles added to Style Blossom.</p>
+    <div class="grid" id="newProducts"></div>
+  </div>
+</section>
+
+<!-- PRODUCT DETAIL -->
+<section id="product" class="view hidden">
+  <div class="page">
+    <button class="small-btn" onclick="showView('shop')">← Back to Shop</button>
+    <div class="detail" id="productDetail" style="margin-top:25px"></div>
+  </div>
+</section>
+
+<!-- CART -->
+<section id="cart" class="view hidden">
+  <div class="page">
+    <h1 class="page-title">Your Cart</h1>
+    <p class="page-sub">Review your selected styles.</p>
+    <div class="cart-layout">
+      <div class="cart-list" id="cartList"></div>
+      <div class="summary" id="cartSummary"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKOUT -->
+<section id="checkout" class="view hidden">
+  <div class="page">
+    <h1 class="page-title">Checkout</h1>
+    <p class="page-sub">Complete your order securely.</p>
+    <div class="checkout">
+      <form class="checkout-box" onsubmit="placeOrder(event)">
+        <h2>Delivery Details</h2>
+        <div class="form-grid">
+          <div class="field"><label>Full Name *</label><input id="name" required></div>
+          <div class="field"><label>Phone *</label><input id="phone" required pattern="[0-9]{10}" title="Enter 10 digit mobile number"></div>
+          <div class="field full"><label>Address *</label><input id="address" required></div>
+          <div class="field"><label>City *</label><input id="city" required></div>
+          <div class="field"><label>PIN Code *</label><input id="pin" required pattern="[0-9]{6}" title="Enter 6 digit PIN code"></div>
+        </div>
+        <h2 style="margin-top:15px">Payment Method</h2>
+        <div class="payment">
+          <label><input type="radio" name="pay" value="UPI" checked> UPI</label>
+          <label><input type="radio" name="pay" value="Card"> Card</label>
+          <label><input type="radio" name="pay" value="COD"> Cash on Delivery</label>
+        </div>
+        <button class="btn" type="submit">Place Order →</button>
+      </form>
+      <div class="summary" id="checkoutSummary"></div>
+    </div>
+  </div>
+</section>
+
+<!-- WISHLIST -->
+<section id="wishlist" class="view hidden">
+  <div class="page">
+    <h1 class="page-title">My Wishlist</h1>
+    <p class="page-sub">Your favourite pieces in one place.</p>
+    <div class="grid" id="wishProducts"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="view hidden">
+  <div class="page">
+    <h1 class="page-title">About Style Blossom</h1>
+    <p class="page-sub">Fashion that lets you wear your vibe.</p>
+    <div class="about-grid">
+      <div class="about-art">🌸</div>
+      <div class="info-card">
+        <h2>Trendy. Elegant. You.</h2>
+        <p>Style Blossom is a ladies fashion boutique bringing together modern trends and timeless Indian style.</p>
+        <p>Our collection includes kurtis, dresses, sarees, palazzos, leggings, dupattas and accessories—selected for everyday wear, celebrations and special occasions.</p>
+        <p>We believe great fashion should feel comfortable, beautiful and uniquely yours.</p>
+        <button class="btn" onclick="showView('shop')">Explore Collection</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="view hidden">
+  <div class="page">
+    <h1 class="page-title">Contact Us</h1>
+    <p class="page-sub">We'd love to hear from you.</p>
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h2>Visit Our Boutique</h2>
+        <p>📍 City Centre, Your City, India</p>
+        <p>📞 +91 XXXXX XXXXX</p>
+        <p>✉️ hello@styleblossom.in</p>
+        <p>🕒 Mon–Sun: 10:00 AM – 8:00 PM</p>
+      </div>
+      <form class="contact-box" onsubmit="sendMessage(event)">
+        <h2>Send a Message</h2>
+        <div class="field"><label>Your Name *</label><input id="cname" required></div>
+        <div class="field"><label>Email *</label><input id="cemail" type="email" required></div>
+        <div class="field"><label>Message *</label><input id="cmessage" required></div>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div><h3>STYLE BLOSSOM</h3><p>Ladies Fashion Boutique<br>Wear Your Vibe ♡</p></div>
+  <div><h3>Quick Links</h3><p>Home<br>Shop<br>New Arrivals<br>About Us<br>Contact</p></div>
+  <div><h3>Categories</h3><p>Kurtis<br>Dresses<br>Sarees<br>Palazzos<br>Accessories</p></div>
+  <div><h3>Newsletter</h3><p>Get updates and offers.</p><input id="newsletter" type="email" placeholder="Your email address"><button class="btn" onclick="subscribe()">Subscribe</button></div>
+</footer>
+
+<div id="modalRoot"></div>
+<div id="toast" class="toast hidden"></div>
+
+<script>
+const products=[
+ {id:1,name:"Floral Cotton Kurti",category:"Kurtis",price:799,old:999,rating:4.5,reviews:23,emoji:"🌸",type:"kurti",new:true,desc:"Soft cotton floral kurti with an easy everyday fit."},
+ {id:2,name:"Emerald Tiered Dress",category:"Dresses",price:1299,old:1599,rating:4.7,reviews:18,emoji:"✨",type:"dress",new:true,desc:"Flowy tiered dress designed for a graceful, comfortable look."},
+ {id:3,name:"Rose Silk Blend Saree",category:"Sarees",price:1899,old:2499,rating:4.8,reviews:32,emoji:"🥻",type:"saree",new:true,desc:"Elegant silk-blend saree with a polished festive finish."},
+ {id:4,name:"Mint Palazzo Set",category:"Palazzos",price:1399,old:1799,rating:4.6,reviews:21,emoji:"🌿",type:"palazzo",new:true,desc:"Lightweight coordinated palazzo set for effortless style."},
+ {id:5,name:"Lavender Straight Kurti",category:"Kurtis",price:999,old:1299,rating:4.4,reviews:16,emoji:"💜",type:"legging",new:false,desc:"A versatile straight kurti in a soft lavender shade."},
+ {id:6,name:"Golden Printed Dupatta",category:"Dupattas",price:599,old:799,rating:4.3,reviews:11,emoji:"🧣",type:"dupatta",new:false,desc:"Statement printed dupatta to elevate your everyday outfits."},
+ {id:7,name:"Blush Anarkali Dress",category:"Dresses",price:1499,old:1899,rating:4.9,reviews:27,emoji:"🌷",type:"dress",new:true,desc:"Feminine anarkali silhouette with a soft blush finish."},
+ {id:8,name:"Classic Black Leggings",category:"Leggings",price:499,old:649,rating:4.5,reviews:41,emoji:"🖤",type:"legging",new:false,desc:"Stretch-friendly everyday leggings with a comfortable waistband."},
+ {id:9,name:"Pearl Drop Earrings",category:"Accessories",price:399,old:549,rating:4.7,reviews:19,emoji:"💎",type:"accessory",new:true,desc:"Elegant pearl-drop earrings for festive and everyday styling."},
+ {id:10,name:"Printed Cotton Saree",category:"Sarees",price:1199,old:1499,rating:4.4,reviews:14,emoji:"🌺",type:"saree",new:false,desc:"Breathable printed cotton saree with a graceful drape."},
+ {id:11,name:"Wine Palazzo Pants",category:"Palazzos",price:699,old:899,rating:4.2,reviews:9,emoji:"👖",type:"palazzo",new:false,desc:"Relaxed wide-leg palazzos for easy mix-and-match outfits."},
+ {id:12,name:"Floral Hair & Bag Set",category:"Accessories",price:749,old:999,rating:4.6,reviews:12,emoji:"🎀",type:"accessory",new:true,desc:"A cute accessory set to complete your boutique look."}
+];
+
+let cart=JSON.parse(localStorage.getItem("sb_cart")||"[]");
+let wishlist=JSON.parse(localStorage.getItem("sb_wishlist")||"[]");
+let selectedProduct=null;
+let selectedSize="M";
+let selectedQty=1;
+
+const money=n=>"₹"+n.toLocaleString("en-IN");
+function save(){localStorage.setItem("sb_cart",JSON.stringify(cart));localStorage.setItem("sb_wishlist",JSON.stringify(wishlist));updateBadges()}
+
+function updateBadges(){
+ document.getElementById("cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0);
+ document.getElementById("wishCount").textContent=wishlist.length;
+}
+
+function showView(id){
+ document.querySelectorAll(".view").forEach(v=>v.classList.add("hidden"));
+ document.getElementById(id).classList.remove("hidden");
+ document.querySelectorAll(".nav-links button").forEach(b=>b.classList.toggle("active",b.dataset.view===id));
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(id==="shop")renderShop();
+ if(id==="new")renderNew();
+ if(id==="cart")renderCart();
+ if(id==="wishlist")renderWishlist();
+ if(id==="checkout")renderCheckout();
+ document.getElementById("navLinks").classList.remove("mobile-open");
+}
+
+function toggleMobile(){
+ const n=document.getElementById("navLinks");
+ n.style.display=n.style.display==="flex"?"none":"flex";
+ if(n.style.display==="flex"){n.style.position="absolute";n.style.top="68px";n.style.left="0";n.style.right="0";n.style.background="#fff";n.style.padding="15px 20px";n.style.flexDirection="column";n.style.boxShadow="0 10px 20px #0001"}
+}
+
+function productCard(p){
+ const liked=wishlist.includes(p.id);
+ return `<article class="product">
+   <div class="product-img ${p.type}"><span>${p.emoji}</span><button class="wish ${liked?"liked":""}" onclick="toggleWish(${p.id})">${liked?"♥":"♡"}</button></div>
+   <div class="product-info"><h3>${p.name}</h3><div class="rating">★ ${p.rating} (${p.reviews})</div><div class="price">${money(p.price)} <span class="old">${money(p.old)}</span></div>
+   <div class="product-actions"><button class="small-btn" onclick="openProduct(${p.id})">View</button><button class="small-btn primary" onclick="addToCart(${p.id})">Add to Cart</button></div></div>
+ </article>`;
+}
+
+function renderHome(){document.getElementById("homeProducts").innerHTML=products.slice(0,4).map(productCard).join("")}
+function renderShop(){
+ let q=(document.getElementById("searchInput")?.value||"").toLowerCase();
+ let c=document.getElementById("categoryFilter")?.value||"All",s=document.getElementById("sortFilter")?.value||"featured";
+ let arr=products.filter(p=>(c==="All"||p.category===c)&&(p.name.toLowerCase().includes(q)||p.category.toLowerCase().includes(q)));
+ if(s==="low")arr.sort((a,b)=>a.price-b.price); if(s==="high")arr.sort((a,b)=>b.price-a.price); if(s==="rating")arr.sort((a,b)=>b.rating-a.rating);
+ document.getElementById("shopProducts").innerHTML=arr.length?arr.map(productCard).join(""):`<div class="empty" style="grid-column:1/-1"><div class="emoji">🔎</div>No products found.</div>`;
+}
+function renderNew(){document.getElementById("newProducts").innerHTML=products.filter(p=>p.new).map(productCard).join("")}
+function openCategory(c){showView("shop");document.getElementById("categoryFilter").value=c;renderShop()}
+function clearSearch(){document.getElementById("searchInput").value="";renderShop()}
+function focusSearch(){showView("shop");setTimeout(()=>document.getElementById("searchInput").focus(),150)}
+
+function openProduct(id){
+ selectedProduct=products.find(p=>p.id===id);selectedQty=1;selectedSize="M";
+ const p=selectedProduct;
+ document.getElementById("productDetail").innerHTML=`
+ <div class="detail-image product-img ${p.type}">${p.emoji}</div>
+ <div class="detail-info"><h1>${p.name}</h1><div class="detail-rating">★ ${p.rating} &nbsp; (${p.reviews} reviews)</div>
+ <div class="detail-price">${money(p.price)} <span class="detail-old">${money(p.old)}</span></div>
+ <p>${p.desc}</p>
+ <div class="option-label">SIZE</div><div class="options">${["S","M","L","XL"].map(x=>`<button class="option ${x===selectedSize?"selected":""}" onclick="selectSize('${x}',this)">${x}</button>`).join("")}</div>
+ <div class="option-label">QUANTITY</div><div class="qty"><button onclick="changeDetailQty(-1)">−</button><span id="detailQty">1</span><button onclick="changeDetailQty(1)">+</button></div>
+ <button class="btn" onclick="addDetailToCart()">Add to Cart →</button> <button class="btn outline" onclick="buyNow()">Buy Now</button>
+ <p style="font:12px Arial;color:var(--muted);margin-top:18px">✓ Free shipping above ₹999 &nbsp; ✓ Easy returns &nbsp; ✓ Secure checkout</p></div>`;
+ showView("product");
+}
+function selectSize(x,el){selectedSize=x;document.querySelectorAll(".option").forEach(b=>b.classList.remove("selected"));el.classList.add("selected")}
+function changeDetailQty(n){selectedQty=Math.max(1,selectedQty+n);document.getElementById("detailQty").textContent=selectedQty}
+function addDetailToCart(){addToCart(selectedProduct.id,selectedQty,selectedSize);showView("cart")}
+function buyNow(){addDetailToCart();showView("checkout")}
+
+function addToCart(id,qty=1,size="M"){
+ const p=products.find(x=>x.id===id), existing=cart.find(x=>x.id===id&&x.size===size);
+ if(existing)existing.qty+=qty;else cart.push({id,qty,size});
+ save();toast(`${p.name} added to your cart ♡`);
+}
+function removeCart(i){cart.splice(i,1);save();renderCart()}
+function changeCartQty(i,n){cart[i].qty=Math.max(1,cart[i].qty+n);save();renderCart()}
+function cartTotals(){
+ let subtotal=cart.reduce((s,x)=>{let p=products.find(p=>p.id===x.id);return s+p.price*x.qty},0);
+ let shipping=subtotal===0||subtotal>=999?0:79,discount=subtotal>=1500?Math.round(subtotal*.10):0;
+ return {subtotal,shipping,discount,total:subtotal+shipping-discount};
+}
+function summaryHTML(t,checkout=false){
+ return `<h2>${checkout?"Order Summary":"Cart Summary"}</h2><div class="row"><span>Subtotal</span><b>${money(t.subtotal)}</b></div>
+ <div class="row"><span>Shipping</span><b>${t.shipping?money(t.shipping):"FREE"}</b></div>
+ <div class="row"><span>Discount</span><b>− ${money(t.discount)}</b></div>
+ <div class="row total"><span>Total</span><b>${money(t.total)}</b></div>
+ ${!checkout?`<button class="btn" style="width:100%;margin-top:20px" ${!cart.length?"disabled":""} onclick="showView('checkout')">Proceed to Checkout →</button>`:""}
+ <p style="font:11px Arial;color:var(--muted);margin-top:12px">${t.subtotal<999&&t.subtotal>0?`Add ${money(999-t.subtotal)} more for free shipping.`:"Free shipping applied."}</p>`;
+}
+function renderCart(){
+ const list=document.getElementById("cartList"),t=cartTotals();
+ if(!cart.length){list.innerHTML=`<div class="empty"><div class="emoji">🛍️</div><h2>Your cart is empty</h2><p>Discover something beautiful for your wardrobe.</p><br><button class="btn" onclick="showView('shop')">Start Shopping</button></div>`}
+ else list.innerHTML=cart.map((x,i)=>{let p=products.find(p=>p.id===x.id);return `<div class="cart-item"><div class="cart-thumb product-img ${p.type}">${p.emoji}</div><div><h3>${p.name}</h3><p>Size: ${x.size}</p><div class="qty"><button onclick="changeCartQty(${i},-1)">−</button><span>${x.qty}</span><button onclick="changeCartQty(${i},1)">+</button></div><button class="remove" onclick="removeCart(${i})">Remove</button></div><div class="item-price">${money(p.price*x.qty)}</div></div>`}).join("");
+ document.getElementById("cartSummary").innerHTML=summaryHTML(t);
+}
+function renderCheckout(){document.getElementById("checkoutSummary").innerHTML=summaryHTML(cartTotals(),true)}
+function renderWishlist(){
+ const arr=products.filter(p=>wishlist.includes(p.id));
+ document.getElementById("wishProducts").innerHTML=arr.length?arr.map(productCard).join(""):`<div class="empty" style="grid-column:1/-1"><div class="emoji">♡</div><h2>Your wishlist is empty</h2><p>Tap the heart on products you love.</p><br><button class="btn" onclick="showView('shop')">Browse Products</button></div>`;
+}
+function toggleWish(id){if(wishlist.includes(id))wishlist=wishlist.filter(x=>x!==id);else wishlist.push(id);save();renderHome();renderShop();renderNew();renderWishlist();toast(wishlist.includes(id)?"Added to wishlist ♡":"Removed from wishlist")}
+function placeOrder(e){
+ e.preventDefault(); if(!cart.length){toast("Your cart is empty");showView("shop");return}
+ const order="SB"+Date.now().toString().slice(-8); const name=document.getElementById("name").value;
+ cart=[];save();
+ document.getElementById("modalRoot").innerHTML=`<div class="overlay"><div class="modal"><div class="modal-head"><h2>Order Confirmed ♡</h2><button class="close" onclick="closeModal()">×</button></div><p>Thank you, <b>${name}</b>! Your Style Blossom order has been placed successfully.</p><p style="margin-top:12px">Order ID: <b>${order}</b></p><p style="margin-top:8px;color:var(--muted)">This is a clickable prototype, so no real payment has been processed.</p><button class="btn" style="margin-top:20px" onclick="closeModal();showView('home')">Continue Shopping</button></div></div>`;
+}
+function sendMessage(e){e.preventDefault();e.target.reset();toast("Message sent successfully ♡")}
+function subscribe(){const x=document.getElementById("newsletter");if(!x.value){x.focus();return}x.value="";toast("Subscribed to Style Blossom updates ♡")}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.remove("hidden");clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.add("hidden"),2400)}
+function closeModal(){document.getElementById("modalRoot").innerHTML=""}
+
+renderHome();updateBadges();showView("home");
+</script>
+</body>
+</html>
